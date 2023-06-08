@@ -1,7 +1,9 @@
 import React, { useState,useEffect } from 'react'
-// import { useHistory } from "react-router-dom";
+import { useNavigate } from "react-router-dom";
+import Navbar from './Navbar';
 
 export default function CreateBlog() {
+    const navigate=useNavigate();
 
     const [blog,setBlog]=useState({
         title:"",
@@ -30,7 +32,7 @@ export default function CreateBlog() {
                     body:"",
                     author:""
                 })
-                // history.push('/')
+                navigate('/')
             })
         }
     
@@ -38,17 +40,22 @@ export default function CreateBlog() {
 
   return (
     <div>
-        <form action="" onSubmit={handleSubmit}>
+        <Navbar/>
+        <form action="" className='container my-5' onSubmit={handleSubmit}>
+            <div className="form-group">
             <label>Title</label>
-            <input type="text" name='title' value={blog.title} onChange={handleChange} /><br />
-
+            <input type="text" className="form-control" name='title' value={blog.title} onChange={handleChange} /><br />
+            </div>
+            <div className="form-group">
             <label>Details</label>
-            <textarea type="text" name='body' value={blog.body} onChange={handleChange} /><br />
-
+            <textarea type="text" cols="30" rows="10" className="form-control" name='body' value={blog.body} onChange={handleChange} /><br />
+            
+            </div>
+            <div className="form-group">
             <label>Author</label>
-            <input type="text" name='author' value={blog.author} onChange={handleChange} /><br />
-
-            <button type='submit'>Submit</button>
+            <input type="text" className="form-control" name='author' value={blog.author} onChange={handleChange} /><br />
+            </div>
+            <button className='btn btn-primary' type='submit'>Submit</button>
         </form>
     </div>
   )
