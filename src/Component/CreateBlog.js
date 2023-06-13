@@ -1,4 +1,4 @@
-import React, { useState,useEffect } from 'react'
+import React, { useState } from 'react'
 import { useNavigate } from "react-router-dom";
 import Navbar from './Navbar';
 
@@ -35,9 +35,7 @@ export default function CreateBlog() {
                 navigate('/')
             })
         }
-    
-    
-
+        
   return (
     <div>
         <Navbar/>

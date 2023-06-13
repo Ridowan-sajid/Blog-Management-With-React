@@ -70,6 +70,7 @@ export default function CreateBlog() {
             </div>
             <button className='btn btn-primary' type='submit'>Submit</button>
         </form>
+        {err && <h4>{err}</h4>}
     </div>
   )
 }

@@ -28,8 +28,8 @@ export default function BlogDetails() {
             <h6>Author: {blog.author}</h6>
             <Link to={`/blog/update/${blog.id}`}><button className='btn btn-outline-primary'>Update</button></Link>
             <button className='btn btn-outline-primary mx-3' type='submit' onClick={()=>handleClick(blog.id)}>Delete</button>
-            
         </div>
+        {err && <h4>{err}</h4>}
     </div>
   )
 }
