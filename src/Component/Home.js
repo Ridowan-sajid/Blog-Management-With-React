@@ -9,7 +9,7 @@ function App() {
     <div className="App">
       <Navbar />
       {blog && <BlogList blog={blog} />}
-      {err && <h1 style={{ textAlign: "center" }}>There is an error</h1>}
+      {err && <h1 style={{ textAlign: "center" }}>{err}</h1>}
     </div>
   );
 }

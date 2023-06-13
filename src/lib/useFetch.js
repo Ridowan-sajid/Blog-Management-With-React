@@ -22,7 +22,7 @@ export default function useFetch(address) {
           console.log("fetch aborted");
         } else {
           console.log(err);
-          setErr(err);
+          setErr(err.message);
         }
       });
 
